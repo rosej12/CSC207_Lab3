@@ -5,9 +5,12 @@ import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
+<<<<<<< HEAD
 // TODO CheckStyle: Wrong lexicographical order for 'java.util.HashMap' import (remove this comment once resolved)
 import java.util.HashMap;
 import java.util.Map;
+=======
+>>>>>>> f7480c87ef60cc391a917326292d42e5d37163fb
 
 /**
  * This class provides the service of converting country codes to their names.
