@@ -52,7 +52,8 @@ public class JSONTranslationExample {
      * @return the translation of country to the given language or "Country not found" if there is no translation.
      */
     public String getCountryNameTranslation(String countryCode, String languageCode) {
-        return "Country not found";
+
+        return countryCode + " " + languageCode;
     }
 
     /**

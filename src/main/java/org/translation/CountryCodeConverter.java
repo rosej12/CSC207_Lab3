@@ -10,12 +10,11 @@ import java.util.List;
  * This class provides the service of converting country codes to their names.
  */
 public class CountryCodeConverter {
-
     // TODO Task: pick appropriate instance variable(s) to store the data necessary for this class
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
-     * in the resources folder.
+     * in the resources' folder.
      */
     public CountryCodeConverter() {
         this("country-codes.txt");
@@ -33,6 +32,7 @@ public class CountryCodeConverter {
                     .getClassLoader().getResource(filename).toURI()));
 
             // TODO Task: use lines to populate the instance variable(s)
+
 
         }
         catch (IOException | URISyntaxException ex) {
