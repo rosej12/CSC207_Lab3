@@ -12,7 +12,9 @@ import java.util.Map;
  * This class provides the service of converting country codes to their names.
  */
 public class CountryCodeConverter {
-    // TODO Task: pick appropriate instance variable(s) to store the data necessary for this class
+
+    private Map<String, String> codeToCountry;
+    private Map<String, String> countryToCode;
 
     /**
      * Default constructor which will load the country codes from "country-codes.txt"
@@ -33,8 +35,14 @@ public class CountryCodeConverter {
             List<String> lines = Files.readAllLines(Paths.get(getClass()
                     .getClassLoader().getResource(filename).toURI()));
 
-            // TODO Task: use lines to populate the instance variable(s)
+            codeToCountry = new HashMap<>();
+            countryToCode = new HashMap<>();
 
+            for (int i = 1; i < lines.size(); i++) {
+                String[] parts = lines.get(i).split("\t");
+                codeToCountry.put(parts[2].toLowerCase(), parts[0]);
+                countryToCode.put(parts[0], parts[2].toLowerCase());
+            }
 
         }
         catch (IOException | URISyntaxException ex) {
@@ -49,8 +57,7 @@ public class CountryCodeConverter {
      * @return the name of the country corresponding to the code
      */
     public String fromCountryCode(String code) {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return code;
+        return codeToCountry.get(code);
     }
 
     /**
@@ -59,8 +66,7 @@ public class CountryCodeConverter {
      * @return the 3-letter code of the country
      */
     public String fromCountry(String country) {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return country;
+        return countryToCode.get(country);
     }
 
     /**
@@ -68,7 +74,6 @@ public class CountryCodeConverter {
      * @return how many countries are included in this code converter.
      */
     public int getNumCountries() {
-        // TODO Task: update this code to use an instance variable to return the correct value
-        return 0;
+        return countryToCode.size();
     }
 }
