@@ -40,8 +40,8 @@ public class CountryCodeConverter {
 
             for (int i = 1; i < lines.size(); i++) {
                 String[] parts = lines.get(i).split("\t");
-                codeToCountry.put(parts[2], parts[0]);
-                countryToCode.put(parts[0], parts[2]);
+                codeToCountry.put(parts[2].toLowerCase(), parts[0]);
+                countryToCode.put(parts[0], parts[2].toLowerCase());
             }
 
         }
