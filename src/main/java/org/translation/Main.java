@@ -16,8 +16,8 @@ import java.util.Scanner;
  */
 public class Main {
 
-    private static CountryCodeConverter countryCodeConverter;
-    private static LanguageCodeConverter languageCodeConverter;
+    private static CountryCodeConverter countryCodeConverter = new CountryCodeConverter();
+    private static LanguageCodeConverter languageCodeConverter = new LanguageCodeConverter();
 
     /**
      * This is the main entry point of our Translation System!<br/>
@@ -25,8 +25,6 @@ public class Main {
      * @param args not used by the program
      */
     public static void main(String[] args) {
-        countryCodeConverter = new CountryCodeConverter();
-        languageCodeConverter = new LanguageCodeConverter();
 
         Translator translator = new JSONTranslator();
 
@@ -92,7 +90,6 @@ public class Main {
 
     // Note: CheckStyle is configured so that we don't need javadoc for private methods
     private static String promptForLanguage(Translator translator, String country) {
-        System.out.println(translator.getCountryLanguages(country));
 
         // get list of language codes
         List<String> languageCodes = translator.getCountryLanguages(country);

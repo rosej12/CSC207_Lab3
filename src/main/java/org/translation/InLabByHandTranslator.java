@@ -25,7 +25,6 @@ public class InLabByHandTranslator implements Translator {
 
     @Override
     public List<String> getCountryLanguages(String country) {
-        // TODO Checkstyle: The String "can" appears 4 times in the file.
 
         if (CANADA.equals(country)) {
             return new ArrayList<>(List.of("de", "en", "zh"));
